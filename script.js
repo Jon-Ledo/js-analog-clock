@@ -1,7 +1,15 @@
 const secondsHand = getElement('#seconds-hand')
 const minutesHand = getElement('#minutes-hand')
 const hoursHand = getElement('#hours-hand')
+const getNumbers = document.querySelectorAll('.number')
 
+getNumbers.forEach(printNumbers)
+
+function printNumbers(element, index) {
+  const degree = 30
+  console.log(element, index)
+  element.style.transform = `rotate(${degree * (index + 1)}deg)`
+}
 
 function getTime() {
   const currentTime = new Date()
